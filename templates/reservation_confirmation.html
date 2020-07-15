@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="confirmation_wrapper">
+    <h1 class="confirmation_header">Potwierdzenie rezerwacji</h1>
+    <div class="confirmation_info">
+        <p>Gratulacje {{ current_user }}!</p>
+        <p>Udało Ci się zarezerwować miejsce {{ place }} na seans {{ seance.only_date }}, który odbędzię się
+        {{ seance.only_hour }} w Kinie.</p>
+        <p>Do zobaczenia!</p>
+    </div>
+    <a class="return" href="{{ url_for('index') }}">Powrót do strony głównej</a>
+</div>
+
+
+{% endblock %}
+
+

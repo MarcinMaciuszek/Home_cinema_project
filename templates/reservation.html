@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="display_wrapper">
+    <div class="display">Ekran</div>
+</div>
+
+<div class="reservation_wrapper">
+    {% set name = user_name %}
+    <div class="user_name" content="{{ name }}"></div>
+
+    <div class="seats_wrapper">
+        {% if seance.maximum_places >= 1 %}
+            <div class="seat" content="{{ seance.place_1 }}">
+                {% if seance.place_1 == None %}
+                     <a class="elo" href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=1) }}">
+                         <div class="seat_label_empty">1</div>
+                     </a>
+                {% elif seance.place_1 == user_name %}
+                    <div class="seat_label_user_taken">1</div>
+                {% else %}
+                    <div class="seat_label_taken">1</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 2 %}
+            <div class="seat" content="{{ seance.place_2 }}">
+                {% if seance.place_2 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=2) }}">
+                         <div class="seat_label_empty">2</div>
+                     </a>
+                {% elif seance.place_2 == user_name %}
+                    <div class="seat_label_user_taken">2</div>
+                {% else %}
+                    <div class="seat_label_taken">2</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 3 %}
+            <div class="seat" content="{{ seance.place_3 }}">
+                {% if seance.place_3 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=3) }}">
+                         <div class="seat_label_empty">3</div>
+                     </a>
+                {% elif seance.place_3 == user_name %}
+                    <div class="seat_label_user_taken">3</div>
+                {% else %}
+                    <div class="seat_label_taken">3</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 4 %}
+            <div class="seat" content="{{ seance.place_4 }}">
+                {% if seance.place_4 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=4) }}">
+                         <div class="seat_label_empty">4</div>
+                     </a>
+                {% elif seance.place_4 == user_name %}
+                    <div class="seat_label_user_taken">4</div>
+                {% else %}
+                    <div class="seat_label_taken">4</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 5 %}
+            <div class="seat" content="{{ seance.place_5 }}">
+                {% if seance.place_5 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=5) }}">
+                         <div class="seat_label_empty">5</div>
+                     </a>
+                {% elif seance.place_5 == user_name %}
+                    <div class="seat_label_user_taken">5</div>
+                {% else %}
+                    <div class="seat_label_taken">5</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 6 %}
+            <div class="seat" content="{{ seance.place_6 }}">
+                {% if seance.place_6 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=6) }}">
+                         <div class="seat_label_empty">6</div>
+                     </a>
+                {% elif seance.place_6 == user_name %}
+                    <div class="seat_label_user_taken">6</div>
+                {% else %}
+                    <div class="seat_label_taken">6</div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if seance.maximum_places >= 7 %}
+            <div class="seat" content="{{ seance.place_7 }}">
+                {% if seance.place_7 == None %}
+                     <a href="{{ url_for('reservation_confirmation', date=seance.date, film=seance.film, id=seance.id, place=7) }}">
+                         <div class="seat_label_empty">7</div>
+                     </a>
+                {% elif seance.place_7 == user_name %}
+                    <div class="seat_label_user_taken">7</div>
+                {% else %}
+                    <div class="seat_label_taken">7</div>
+                {% endif %}
+            </div>
+        {% endif %}
+        <div style="clear:both;"></div>
+
+        <div class="legend">
+            <p>Legenda:</p>
+            <div>
+                <div class="square_empty"></div><div class="square_empty_label">- wolne miejsce</div>
+                <div></div>
+                <div class="square_taken"></div><div class="square_taken_label">- miejsce zajęte</div>
+                <div></div>
+                <div class="square_taken_user"></div><div class="square_taken_user_label">- miejsce zajęte przez Ciebie</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="seat_info"></div>
+    <div style="clear:both;"></div>
+    {% for seance_user in current_user.seances_and_users %}
+        {% if seance_user.id == seance.id %}
+            <h5 class="taken_place_banner">
+                Już zająłeś miejsce!
+                {% if delete_function %}
+                    <a class="delete_seat" href="{{ url_for('reservation', date=seance.date, film=seance.film, id=seance.id, delete=True, profil=False) }}">Skasuj rezerwację</a>
+                {% endif %}
+            </h5>
+        {% endif %}
+    {% endfor %}
+
+</div>
+{% endblock %}

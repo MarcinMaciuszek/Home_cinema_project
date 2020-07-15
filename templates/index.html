@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Rezerwacje</title>
+{% endblock %}
+
+{% block body %}
+<header class="content_header">
+    <h1>Nadchodzące seanse</h1>
+</header>
+
+<div class="row">
+    {% if not list_of_seances %}
+        <h1 class="h3">Brak nadchodzących seansów.</h1>
+    {% endif %}
+    {% for seance in list_of_seances %}
+        <div class="col-lg-6 active_seance">
+            <div class="date_film">
+                <span class="date_seance">{{ seance.only_date }}</span>
+                <span class="time_seance">godz. {{ seance.only_hour }}</span>
+            </div>
+
+            <div class="link_img">
+                <a href="{{ seance.film_info }}" target="_blank">
+                    <div>{{ seance.film }}</div>
+                    <div class="seance_img_wrapper">
+                        {% set path_to_img_film = 'static/img/seance/{}/film.jpg'.format(seance.film) %}
+                        {% set path_to_img_film_without_static = 'img/seance/{}/film.jpg'.format(seance.film) %}
+                        {% set path_to_img_poster = 'static/img/seance/{}/poster.jpg'.format(seance.film) %}
+                        {% set path_to_img_poster_without_static = 'img/seance/{}/poster.jpg'.format(seance.film) %}
+                        {% if seance.film_img %}
+                            <img class="seance_img img_fluid" src="{{ seance.film_img }}" alt="Film" />
+                        {% else %}
+                            <p>{{path_to_img}} {{path_to_img_film}}</p>
+
+                        <p>{{ func('path_to_img') }}</p>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+
+            <div class="reservation">
+                <span class="places">
+                    Miejsca: {{ seance.free_places }} / {{ seance.maximum_places }}
+                </span>
+                <span class="reservation_button">
+                    {% if seance.free_places %}
+                    <span class="places">
+                        <a href="{{ url_for('reservation', date=seance.date, film=seance.film, id=seance.id, delete=False, profil=False) }}">Rezerwuj!</a>
+                    </span>
+                    {% else %}
+                    <span class="no_places">Brak miejsc :(</span>
+                    {% endif %}
+                </span>
+            </div>
+            <div style="clear:both";></div>
+        </div>
+    {% endfor %}
+
+
+</div>
+<button class="archive_button"><a href="{{ url_for('archive') }}">Archiwum seansów</a></button>
+<div style="clear:both;"></div>
+{% endblock %}

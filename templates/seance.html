@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="seance_wrapper">
+    <h1>Zaproponuj seans</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+         <p>
+            {{ form.link.label }}
+            {{ form.link(size=32) }}
+            {% for error in form.link.errors %}
+            <span class="validation">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.description.label }}
+            {{ form.description(size=32) }}
+            {% for error in form.description.errors %}
+            <span class="validation">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <div class="submit_seance">
+            {{ form.submit() }}
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="profil_wrapper">
+    <h1>Profil</h1>
+    <table>
+        <tr>
+            <th>Email:</th><td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Imie:</th><td>{{ user.name }}</td>
+        </tr>
+        <tr>
+            <th>Nazwisko:</th><td>{{ user.last_name }}</td>
+        </tr>
+        <th>Seansy:</th>
+        {% if seances %}
+            {% for seance in seances %}
+            <tr>
+                <th> {{ seance.date }} {{ seance.film }} </th>
+                <td> <a class="delete_seat" href="{{ url_for('reservation', date=seance.date, film=seance.film, id=seance.id, delete=True, profil=True) }}">Skasuj rezerwację</a></td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <td>Nie jesteś zapisany na żadny seans</td>
+        {% endif %}
+    </table>
+    <button class="change_password_button"><a href="{{ url_for('profile_archive_seances', email=current_user.email) }}">Archiwalne seansy</a></button>
+    <button class="change_password_button"><a href="/password_change">Zmiana hasła</a></button>
+</div>
+
+
+{% endblock %}

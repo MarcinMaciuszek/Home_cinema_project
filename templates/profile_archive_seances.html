@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="profil_wrapper">
+    <h1>Archiwalne seany z Twoim udziałem:</h1>
+    <table>
+        {% if seances %}
+            {% for seance in seances %}
+            <tr>
+                <td> {{ seance.date }} {{ seance.film }} </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <th>Brak archiwalnych seansów</th>
+            </tr>
+        {% endif %}
+    </table>
+    <button class="change_password_button"><a href="{{ url_for('profile', email=current_user.email) }}">Powrót do profilu</a></button>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,665 @@
+body
+{
+/* Background pattern from Toptal Subtle Patterns */
+    background-image: url(../img/wood_pattern.png);
+    background-size: 60px;
+    color: #e4a00f;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header
+{
+    min-height: 77px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar
+{
+    min-height: 71px;
+    background-color: #ac3a3a;
+    font-size: 26px;
+    opacity: 0.8;
+    border-bottom: 2px solid black;
+}
+
+.dropdown-menu,
+.navbar-brand
+{
+    background-color: #ac3a3a;
+    font-size: 26px;
+}
+
+.dropdown-item:hover
+{
+    background-color: transparent;
+    color: #292929;
+}
+
+a
+{
+    color: #ddd !important;
+    text-decoration: none;
+}
+
+header a:hover
+{
+    color: #292929 !important;
+    text-decoration: none;
+}
+
+.navbar-brand img
+{
+    width: auto;
+    height: 35px;
+}
+
+.navbar-nav .nav-link
+{
+    padding-left: 15px;
+    margin-right: 10px;
+    letter-spacing: 3px;
+}
+
+.nav-link:hover,
+.dropdown-item:hover
+{
+    background-color: #ce5c5c;
+    border-radius: 10px;
+}
+
+.nav-link-admin
+{
+    background-color: #04495c;
+    border-radius: 10px;
+}
+
+.nav-link-admin:hover
+{
+    background-color: #266a7f;
+}
+
+.footer
+{
+    height: 45px;
+    width: 100%;
+    border-top: 2px solid #292929;
+    position: fixed;
+    bottom: 0;
+}
+
+.copyright
+{
+    background-color: #292929;
+    color: #ddd;
+    text-align: center;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    min-height: 45px;
+}
+
+.fb
+{
+    text-align: center;
+    background-color: #4668b3;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    min-height: 45px;
+}
+
+.icon-facebook
+{
+    font-style: normal;
+}
+
+.person_header
+{
+    text-align: center;
+}
+
+.person_info
+{
+    font-size: 18px;
+    line-height: 40px;
+    padding: 50px;
+}
+
+.about_img
+{
+    max-height: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auto_reply_contact
+{
+    text-align: center;
+    background-color: #0ba28b;
+    color: #dadd2d;
+}
+
+.auto_reply_img
+{
+    height: 45px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+footer_tile
+{
+    margin: 10px;
+}
+
+.footer_tile:hover
+{
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.messages
+{
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.messages ul
+{
+    padding: 0;
+}
+
+.messages ul li
+{
+    list-style: none;
+    text-decoration: none;
+    background-color: #ac3a3a;
+    color: #292929;
+    max-width: fit-content;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.container
+{
+    background-color: #292929;
+    opacity: 0.9;
+    margin-bottom: 25px;
+    border: 2px solid #181818;
+    margin-bottom: 150px;
+}
+
+.content_header
+{
+    text-align: center;
+    padding: 10px;
+    color: #ac3a3a;
+}
+
+h1
+{
+    font-weight: 700;
+}
+
+.active_seance
+{
+    border-radius: 10px;
+    background-color: #04495c;
+    border: 20px solid #292929;
+    padding: 15px;
+}
+
+.archive_seance
+{
+    border-radius: 10px;
+    background-color: #022630;
+    border: 20px solid #292929;
+    padding: 15px;
+    opacity: 0.9;
+}
+
+.date_film
+{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link_img a
+{
+    font-size: 24px;
+}
+
+.link_img a:hover
+{
+    color: white !important;
+    text-decoration: none;
+}
+
+.reservation
+{
+    padding-top: 25px;
+}
+
+.reservation_button
+{
+    float: right;
+}
+
+.no_places
+{
+    padding: 10px;
+    background-color: #070707;
+    border-radius: 10px;
+    opacity: 1;
+    color: #bd4b4b;
+    font-weight: 700;
+}
+
+.places
+{
+    letter-spacing: 3px;
+}
+
+.places a:hover
+{
+    color: white !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.archive_button
+{
+    float: right;
+    border-radius: 10px;
+    background-color: #ac3a3a;
+    margin-bottom: 15px;
+}
+
+.login_wrapper,
+.register_wrapper
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin: auto;
+}
+
+.login_wrapper a
+{
+    padding-left: 20px;
+    letter-spacing: 3px;
+}
+
+.login_wrapper a:hover
+{
+    text-decoration: none;
+    font-weight: 700;
+}
+
+input[type=text],
+input[type=password],
+textarea
+{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ddd;
+    min-width: 50%;
+    max-width: 100%;
+    display: block;
+    min-height: 26px;
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus
+{
+    background-color: white;
+    border: 2px solid #e4a00f;
+}
+
+input[type=submit]
+{
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 700;
+}
+
+.submit_register
+{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.submit_login,
+.submit_seance
+{
+    margin-bottom: 15px;
+}
+
+input[type=submit]:hover
+{
+    background-color: #ac3a3a;
+}
+
+.validation
+{
+    color: #cf3a3a;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.new_user
+{
+    padding-bottom: 10px;
+}
+
+.profil_wrapper
+{
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.profil_wrapper h1
+{
+    margin: 0;
+}
+
+.profil_wrapper td
+{
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.archive_button,
+.change_password_button
+{
+    background-color: #ac3a3a;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.archive_button a,
+.change_password_button a
+{
+    text-decoration: none;
+}
+
+.archive_button:hover,
+.change_password_button:hover
+{
+    background-color: #ce5c5c;
+}
+
+.archive_button:hover a,
+.change_password_button:hover a
+{
+    color: #292929 !important;
+}
+
+.h3
+{
+    margin-left: 20px;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+.seance_img_wrapper
+{
+    overflow: hidden;
+    width: auto;
+}
+
+.seance_img
+{
+    transition: all 0.5s ease-in-out;
+}
+
+.seance_img:hover
+{
+    transform: scale(1.15);
+}
+
+.seance_img_archive
+{
+    filter: grayscale(100%);
+}
+
+.display_wrapper
+{
+    text-align: center;
+}
+
+.display
+{
+    display: inline-block;
+    font-size: 48px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+}
+
+
+.reservation_wrapper
+{
+    text-align: center;
+}
+
+.seat
+{
+    width: 35px;
+    height: 50px;
+    margin: 20px;
+    display: inline-block;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.legend
+{
+    margin-left: 35px;
+    margin-bottom: 20px;
+    text-align: left;
+    min-height: 120px;
+    float: left;
+}
+
+.seat_info
+{
+    display: inline-block;
+    margin-left: 40px;
+    opacity: 0;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.25s ease-in-out;
+    float: left;
+}
+
+.seat a
+{
+    color: black !important;
+    text-decoration: none;
+}
+
+.seat a .seat_label_empty:hover
+{
+    background-color: white;
+}
+
+.seat .seat_label_taken:hover
+{
+    background-color: #ce5c5c;
+}
+
+.seat_label_empty
+{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.seat_label_taken
+{
+    background-color: #ac3a3a;
+}
+
+.seat_label_user_taken
+{
+    background-color: #04495c;
+}
+
+.delete_seat:hover
+{
+    text-decoration: none;
+    font-weight: 700;
+    color: white !important;
+}
+
+.square_empty
+{
+    width: 35px;
+    height: 50px;
+    background-color: #ddd;
+    display: inline-block;
+}
+
+.square_taken
+{
+    width: 35px;
+    height: 50px;
+    background-color: #ac3a3a;
+    display: inline-block;
+}
+
+.square_taken_user
+{
+    width: 35px;
+    height: 50px;
+    background-color: #04495c;
+    display: inline-block;
+}
+
+.square_taken_label,
+.square_empty_label,
+.square_taken_user_label
+{
+    line-height: 50px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.confirmation_wrapper
+{
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.confirmation_info
+{
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+.return:hover
+{
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1000px)
+{
+    body
+    {
+        font-size: 0.9em;
+    }
+
+    .copyright
+    {
+        float: none;
+        width: 100%;
+    }
+
+    .fb
+    {
+        float: none;
+        width: 100%;
+    }
+
+    .auto_reply_contact
+    {
+        float: none;
+        width: 100%;
+    }
+
+    .footer
+    {
+        height: auto;
+        margin-top: -50px;
+    }
+
+    .container
+    {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1
+    {
+        font-size: 1.8em;
+    }
+
+    .date_film,
+    .link_img a
+    {
+        font-size: 20px;
+    }
+
+    .content_header
+    {
+        margin-bottom: 0;
+    }
+
+    .person_info
+    {
+        padding: 15px;
+    }
+
+    .navbar
+    {
+        font-size: 22px;
+    }
+}
